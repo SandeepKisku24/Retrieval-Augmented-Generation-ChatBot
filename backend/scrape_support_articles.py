@@ -22,7 +22,12 @@ CATEGORY_URLS = [
     f"{BASE_URL}/support/charges-and-cashbacks",
     f"{BASE_URL}/support/angel-one-recommendations",
     f"{BASE_URL}/support/ipo-and-ofs",
-    f"{BASE_URL}/support/loans"
+    f"{BASE_URL}/support/loans",
+    f"{BASE_URL}/support/charts",
+    f"{BASE_URL}/support/compliance",
+    f"{BASE_URL}/support/fixed-deposits",
+    f"{BASE_URL}/support/margin-pledging-and-margin-trading-facility",
+    f"{BASE_URL}/support/mutual-funds"
 ]
 SAVE_DIR = "data/web_content"
 os.makedirs(SAVE_DIR, exist_ok=True)

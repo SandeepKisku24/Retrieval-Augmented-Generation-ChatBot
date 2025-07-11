@@ -1,0 +1,9 @@
+Available Margin to Trade
+Margin Pledge/Unpledge
+Margin Trading Facility
+Tap on Account at the bottom of your screenTrading balance is shown at on the card at the top of the pageClick on Trading balance card to view more details about the funds
+Available Margin to Trade consists of your Funds balance & margin against eligible holdings.
+You can increase your Available Margin to Trade by adding Funds or by creating a Margin Pledge against your eligible holdings in Accounts -> Stock Pledging.
+Peak Margin is the minimum margin that must be collected by brokers from their clients in advance of placing any intraday / delivery order.
+Peak Margin shortfall occurs when you buy a share from 80% margin released against delivery sell transactions and such sell position is subsequently bought back.You will be charged a penalty if margin shortfall is due to insufficient margin.
+You can check your available cash and margin by visiting Account → Trading balancescreen on web or mobile app. Here you will see the Cash balance and the margins frompledge holdings

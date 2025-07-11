@@ -1,0 +1,12 @@
+Chart not Loading
+Drawing Tools
+Indicators
+Multi Charts
+Trade From Charts
+Others
+Open PlaystoreSearch for Google Chrome on PlaystoreUpdate Google Chrome or your default browser to the latest versionThe chart should load successfully nowIf the chart loading fails & issue still exists :Open Playstore againSearch for Android System WebviewClick to Update the Android System Webview to the latest version
+Go to settings -> privacy and security -> clear browser history.
+Open application settings and clear cache and clear data, once cleared, chart should load.
+Always check system timezone is in sync with your chart timestamp. Also device timezone is synced with IST.
+If the charts are not working correctly in other timezones , try to come in Indian timezone and check the functioning of charts.
+Our team is working to give a more flexible and permanent fix for this.

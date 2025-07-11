@@ -1,0 +1,30 @@
+Account Verification
+Consent & Security
+Eligibility
+Fixed Deposit Options
+Payments and Withdrawal
+Post Purchase
+Verifying your mobile number helps us create a secure account for you, ensuring a smooth app experience and the safety of your account.
+No, your details, including your mobile number, must match those verified by our banking partner. A mismatch will result in your application being rejected by the bank.
+These permissions are needed to verify your mobile number by sending an SMS. Rest assured, these permissions are used solely for verification purposes.
+Yes, you can. However, we recommend using the SIM registered with your bank account for authentication.
+Yes, you can retry. Ensure you use the SIM linked to your bank account for authentication.
+No, currently, we only process fixed deposit requests for individuals with an active PAN.
+For booking fixed deposits, we need to verify your PAN with the regulated authorities. If there is a mismatch, the booking cannot be completed.
+The name linked to your PAN should be accurate for successful identity verification and KYC purposes. Please update your name to match your PAN.
+Aadhar is mandatory for identification and KYC setup for your account, necessary for processing your FD request.
+No, a physical copy is not required. We use secure platforms like DigiLocker and CKYC for verifying your Aadhar and other documents.
+DigiLocker is a government initiative under the Digital India project for storing and verifying documents like PAN card, driving license, Aadhar card, school marksheets, and insurance papers.
+For successful FD booking, the name on your Aadhar and PAN should match. Correct the details on either your PAN or Aadhar card and retry.
+Use the “add” button on the address choice screen to add an address that is not listed.
+The address from your Aadhar is considered your permanent address. You may add or select your current address to proceed with the FD application.
+Yes, you can select your permanent address as your current address if they are the same.
+Video KYC is required to complete the KYC verification step as mandated by the RBI.
+If you have made the payment, we will notify you when the bank officers are available. If video KYC is not completed within 3 days, your money will be refunded to your bank account.
+Video KYC is available from Monday to Saturday, 09:00 AM to 08:00 PM. We will notify you to complete the video KYC during these hours if pending.
+You can retry during banking hours within 2 days of FD booking if your video KYC fails.
+Your video KYC details are verified by bank officers, which may take up to 3 hours. Track the video KYC and FD confirmation status on the ‘My Investments’ tab.
+Retry using the correct details. If it still doesn’t work, try again later. If the issue persists, raise a ticket with our support team for assistance.
+These details are required by the bank to create your fixed deposit and ensure communication if needed.
+Your money is deducted before video KYC as it is the last step to verify your identity and book your FD. Your money is safe with the bank, and interest starts accumulating from the time of payment. In case of issues with VKYC, your money will be refunded within 7 working days.
+Keep your PAN Card and a blank paper with a pen ready for the VKYC process.
