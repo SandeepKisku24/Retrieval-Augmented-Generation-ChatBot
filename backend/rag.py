@@ -1,17 +1,14 @@
-# rag.py
-
 import os
 import pickle
 import requests
 from dotenv import load_dotenv
-from langchain_community.embeddings import SentenceTransformerEmbeddings
 from langchain_community.vectorstores import FAISS
 
 load_dotenv()
 HF_TOKEN = os.getenv("HF_API_KEY")
 
-# Load embedding and FAISS index
-embedding = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
+# Do NOT load embedding model in Render backend — it will cause OOM
+# Just load FAISS index (with precomputed embeddings)
 with open("faiss_index.pkl", "rb") as f:
     vectorstore = pickle.load(f)
 
@@ -55,7 +52,7 @@ def get_rag_response(question: str) -> str:
     context = "\n\n".join([doc.page_content for doc in docs])
 
     if not context.strip():
-        return "I don't know"
+        return "🤔 I don't know"
 
     prompt = f"""Answer the question based only on the context below. If you don't know the answer, say "I don't know".
 
