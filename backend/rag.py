@@ -5,13 +5,14 @@ from langchain_community.vectorstores import Chroma
 from langchain_community.embeddings import SentenceTransformerEmbeddings
 
 load_dotenv()
-HF_TOKEN = os.getenv("HF_API_KEY")  # Make sure this is set correctly in .env
+HF_TOKEN = os.getenv("HF_API_KEY")  # Put this in Render secrets panel
 
-embedding = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
+# Use a light-weight embedding model (free-tier safe)
+embedding = SentenceTransformerEmbeddings(model_name="sentence-transformers/paraphrase-MiniLM-L3-v2")
 vectorstore = Chroma(persist_directory="chroma_db", embedding_function=embedding)
 retriever = vectorstore.as_retriever(search_kwargs={"k": 2})
 
-def call_huggingface_model(prompt):
+def call_huggingface_model(prompt: str):
     headers = {
         "Authorization": f"Bearer {HF_TOKEN}",
         "Content-Type": "application/json"
@@ -26,7 +27,7 @@ def call_huggingface_model(prompt):
     }
 
     response = requests.post(
-        "https://api-inference.huggingface.co/models/facebook/bart-large-cnn",  # or whichever you're using
+        "https://api-inference.huggingface.co/models/facebook/bart-large-cnn",  # this one works
         headers=headers,
         json=payload
     )
@@ -37,19 +38,15 @@ def call_huggingface_model(prompt):
     try:
         result = response.json()
     except Exception as e:
-        return f"Failed to parse response JSON: {str(e)}"
+        return f"❌ Failed to parse response JSON: {str(e)}"
 
     if isinstance(result, dict) and "error" in result:
-        return "Error from HuggingFace: " + result["error"]
+        return "❌ HuggingFace Error: " + result["error"]
 
-    # Handle different response formats
-    if "generated_text" in result[0]:
-        return result[0]["generated_text"]
-    elif "summary_text" in result[0]:
+    if isinstance(result, list) and "summary_text" in result[0]:
         return result[0]["summary_text"]
-    else:
-        return f"Unexpected response format: {result}"
 
+    return "❌ Unexpected format from HuggingFace"
 
 def get_rag_response(question: str) -> str:
     docs = retriever.get_relevant_documents(question)
