@@ -2,11 +2,11 @@ import os
 import pickle
 import requests
 from dotenv import load_dotenv
-
 from langchain_community.vectorstores import FAISS
 
 load_dotenv()
 HF_TOKEN = os.getenv("HF_API_KEY")
+
 
 def download_faiss_from_gdrive():
     file_id = "1D71dmUfIoG99BMVYlP9dEBgcQjl469lh"
@@ -25,14 +25,10 @@ def download_faiss_from_gdrive():
         else:
             print(f"Download failed. Status code: {response.status_code}")
 
-# Download FAISS index if not found
+
+# Call once during import
 download_faiss_from_gdrive()
 
-# Load FAISS index (must be saved with CPU-safe settings)
-with open("faiss_index.pkl", "rb") as f:
-    vectorstore = pickle.load(f)
-
-retriever = vectorstore.as_retriever(search_kwargs={"k": 2})
 
 def call_huggingface_model(prompt: str) -> str:
     headers = {
@@ -67,7 +63,15 @@ def call_huggingface_model(prompt: str) -> str:
 
     return "Unexpected HuggingFace result format."
 
+
 def get_rag_response(question: str) -> str:
+    try:
+        with open("faiss_index.pkl", "rb") as f:
+            vectorstore = pickle.load(f)
+        retriever = vectorstore.as_retriever(search_kwargs={"k": 2})
+    except Exception as e:
+        return f"Failed to load FAISS index: {str(e)}"
+
     docs = retriever.get_relevant_documents(question)
     context = "\n\n".join([doc.page_content for doc in docs])
 
