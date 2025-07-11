@@ -1,0 +1,23 @@
+DP Charges
+Brokerage Charges
+Stock Pledging Charges
+SEBI Charges
+STT (Securities Transaction Tax)
+Stamp Duty
+Transaction / Turnover Charges
+Account Maintenance Charges
+Auto Square Off Charges
+Brokerage Cashback
+Brokerage Plan
+Call and Trade Charges
+DP (Depository Participant) Charges
+GST (Goods & Services Tax)
+Off-Mkt Transaction Charges
+Penal/Delayed Payment Charges
+Pledging Charges
+Depository Participant (DP) charges are combined charges imposed by CDSL and Angel One on everysell transactionof equity delivery shares. Please note that DP charges arenot applicable on intraday trades or delivery buy transactions. The details are as below.
+Equity delivery:₹20 + 18% GST per ISIN per transactionsplit as below.
+(Male – INR 3.5 (CDSL) + INR 16.5 (Angel One Charge))
+(Female – INR 3.25 (CDSL) + INR 16.75 (Angle One Charge))
+For example,
+If you sell 100 shares of TCS on Monday at 10 am and again sell 50 shares later in the day, DP charges will be applicable twice. The total DP charges levied in this case will be Rs. 47.2.
