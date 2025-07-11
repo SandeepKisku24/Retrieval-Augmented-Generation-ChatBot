@@ -1,0 +1,52 @@
+User satisfaction is, and always will be the top priority of Angel One. A big part of it is ensuring that the simplest of your queries are answered with adequate detail in time. For that to be possible, the whole process of collecting and responding to your queries must be efficient and transparent on our end. The latest ticket-raising system on the Angel One website does exactly that.
+
+What is a Ticket?
+A ticket is simply an online document via which you can send us your query. This ticket is meant to replace the earlier process where you would have to send emails to us in order to better describe any queries you have with adequate details and screenshots. 
+Every time you have a distinct query related to the Angel One platform, instead of writing an email, you can create a ticket on the Angel One platform, be it via our website or via our app. 
+Once you enter your detailed question on the ticket, our customer support team will respond to you on the ticket itself. 
+All the tickets that you create, including both open and closed ones, will be accessible to you on a single page.
+Once closed, a ticket can be reopened within a 24-hour window after its closing.
+How To Create a Ticket for Your Query?
+Visit the ‘Support’ page directly or go to the ‘Contact Us’ page on the Angel One website and click on ‘Read FAQs’ under the Support section. 
+Click on any of the FAQs category pages (e.g., Account Details) and find the ‘Create Ticket’ option.
+
+
+Once you click on ‘Create Ticket’, log in to the Angel One website. Just enter your registered mobile number and give the OTP to log in.
+Select a ‘Category’ or ‘Sub-Category’ from the dropdown menu and then add a ‘Subject’ and ‘Description’ for your ticket. You can also provide attachments to explain your query better. Note that you can send a maximum of 3 attachments of up to 2 MB each.
+
+
+That’s it! Your ticket will be created and it will be visible in the ‘Help and Support’ tab. The ticket will include the subject, the status and the category of the query. Simultaneously, an email will also be sent to your registered email ID, containing the ticket’s reference number and the likely time needed for the response.
+A member of the Angel One Customer Support team will answer your query on the same ticket. When that happens, you will be notified of the response via an in-app notification. 
+If you want to share more information regarding the query, you can add your comments or additional queries to the same ticket. This way, the entire conversation will be recorded in a single ticket.
+
+
+Once a resolution is provided for your query, the ticket will be closed, but you can reopen the ticket if you need further assistance. You can reopen the closed ticket within a window of 24 hours after its closing, after which the ticket will be permanently closed. The customer executive assigned to the ticket will be the same as before. Once the ticket is closed, the messaging box will be disabled.
+If you want to find a ticket you have already created, log in to your Angel One account and go to the ‘Account’ tab and click on the ‘My Tickets’ option below ‘Help and Support’. For raising new tickets for more queries, just click on the ‘Create Ticket’ button and follow the steps mentioned above. However, remember that you cannot have more than 3 open tickets at the same time. Nor can you create a new ticket if there is already an open ticket within the same category and sub-category combination.
+
+
+
+Other Ways of Raising Tickets
+You can also raise a ticket with the help of our customer support team. There are two ways that you can do so –
+
+Call us:
+Call our customer care executive at the toll free number 1800 1020.
+Describe to us your query or complaint in detail.
+The ticket with your query/complaint will be created.
+Email us:
+You can email your query/complaint to us directly at support@angelone.in. 
+Describe your query/complaint in detail in your email.
+The ticket with your query/complaint will be created.
+Upon raising a ticket through any of the aforementioned modes, an email will be sent to your registered email ID, along with the unique reference number for the ticket.
+
+You can also check the status of your query or complaint by again reaching out to us via call at 1800 1020 or via email at support@angelone.in. Just remember to keep your reference number of the ticket handy for reference.
+
+
+
+Benefits of the new system
+You can now track all your open and closed queries easily on a single page. Navigating a similar set of queries and responses made over several days or weeks via email would have been harder.
+Because all your conversations on queries are moved to a separate platform on Angel One, your email account is also less clogged.
+Intuitive categorisation of your queries and having a separate channel solely for queries related to such categories will help us respond to them better, thus reducing our response time.
+Conclusion
+We are confident that the new system will further enhance our ability to serve you better. So we encourage all our users to opt for the ticketing system for all their queries henceforth. 
+
+If this new feature seems interesting, join the Angel One community page today follow our latest feature updates.
