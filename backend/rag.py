@@ -7,7 +7,7 @@ from langchain_community.vectorstores import FAISS
 load_dotenv()
 HF_TOKEN = os.getenv("HF_API_KEY")
 
-# Do NOT load embedding model in Render backend — it will cause OOM
+# 
 # Just load FAISS index (with precomputed embeddings)
 with open("faiss_index.pkl", "rb") as f:
     vectorstore = pickle.load(f)
