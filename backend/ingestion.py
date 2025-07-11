@@ -1,12 +1,10 @@
-# ingestion.py
-
 import os
 import pickle
 from dotenv import load_dotenv
-from langchain_community.document_loaders import DirectoryLoader, PyPDFLoader, TextLoader
-from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_community.embeddings import SentenceTransformerEmbeddings
+from langchain_community.document_loaders import PyPDFLoader, DirectoryLoader, TextLoader
 from langchain_community.vectorstores import FAISS
+from langchain_community.embeddings import SentenceTransformerEmbeddings
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 load_dotenv()
 
@@ -21,21 +19,23 @@ def ingest_docs():
 
     all_docs = pdf_docs + text_docs
 
-    # Split into chunks
+    # Chunk the documents
     splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
     chunks = splitter.split_documents(all_docs)
 
-    # Embedding
-    embedding = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
+    print(f"✅ Total chunks: {len(chunks)}")
 
-    # FAISS vector store
-    vectorstore = FAISS.from_documents(chunks, embedding)
+    # Embedding model
+    embeddings = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
 
-    # Save to disk
+    # Create FAISS vectorstore
+    vectorstore = FAISS.from_documents(chunks, embedding=embeddings)
+
+    # Save using CPU (avoids mps/cuda serialization issues)
     with open("faiss_index.pkl", "wb") as f:
         pickle.dump(vectorstore, f)
 
-    print(f"✅ Ingested {len(chunks)} chunks into FAISS and saved as faiss_index.pkl.")
+    print("✅ FAISS index saved to faiss_index.pkl")
 
 if __name__ == "__main__":
     ingest_docs()
