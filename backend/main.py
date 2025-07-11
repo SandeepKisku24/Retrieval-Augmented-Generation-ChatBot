@@ -5,6 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
+# CORS for any frontend
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -18,5 +19,10 @@ class Query(BaseModel):
 
 @app.post("/chat")
 async def chat(query: Query):
-    response = get_rag_response(query.question)
-    return {"answer": response}
+    answer = get_rag_response(query.question)
+    return {"answer": answer}
+
+# Optional: health check endpoint
+@app.get("/")
+def health_check():
+    return {"status": "ok"}

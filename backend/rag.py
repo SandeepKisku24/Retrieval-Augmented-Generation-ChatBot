@@ -7,7 +7,7 @@ from langchain_community.vectorstores import FAISS
 load_dotenv()
 HF_TOKEN = os.getenv("HF_API_KEY")
 
-
+# Google Drive FAISS download
 def download_faiss_from_gdrive():
     file_id = "1D71dmUfIoG99BMVYlP9dEBgcQjl469lh"
     destination = "faiss_index.pkl"
@@ -25,10 +25,23 @@ def download_faiss_from_gdrive():
         else:
             print(f"Download failed. Status code: {response.status_code}")
 
-
-# Call once during import
+# Download FAISS index only if needed
 download_faiss_from_gdrive()
 
+# Global variable for retriever
+retriever = None
+
+def get_retriever():
+    global retriever
+    if retriever is None:
+        try:
+            with open("faiss_index.pkl", "rb") as f:
+                vectorstore = pickle.load(f)
+            retriever = vectorstore.as_retriever(search_kwargs={"k": 2})
+        except Exception as e:
+            print(f"Failed to load FAISS index: {str(e)}")
+            retriever = None
+    return retriever
 
 def call_huggingface_model(prompt: str) -> str:
     headers = {
@@ -44,35 +57,29 @@ def call_huggingface_model(prompt: str) -> str:
         }
     }
 
-    response = requests.post(
-        "https://api-inference.huggingface.co/models/facebook/bart-large-cnn",
-        headers=headers,
-        json=payload
-    )
-
     try:
+        response = requests.post(
+            "https://api-inference.huggingface.co/models/facebook/bart-large-cnn",
+            headers=headers,
+            json=payload
+        )
         result = response.json()
     except Exception as e:
-        return f"Failed to parse response JSON: {str(e)}"
+        return f"Failed to call Hugging Face: {str(e)}"
 
     if isinstance(result, dict) and "error" in result:
         return "HuggingFace Error: " + result["error"]
-
     if isinstance(result, list) and "summary_text" in result[0]:
         return result[0]["summary_text"]
 
     return "Unexpected HuggingFace result format."
 
-
 def get_rag_response(question: str) -> str:
-    try:
-        with open("faiss_index.pkl", "rb") as f:
-            vectorstore = pickle.load(f)
-        retriever = vectorstore.as_retriever(search_kwargs={"k": 2})
-    except Exception as e:
-        return f"Failed to load FAISS index: {str(e)}"
+    retriever_obj = get_retriever()
+    if retriever_obj is None:
+        return "Service is temporarily unavailable due to memory/load issues."
 
-    docs = retriever.get_relevant_documents(question)
+    docs = retriever_obj.get_relevant_documents(question)
     context = "\n\n".join([doc.page_content for doc in docs])
 
     if not context.strip():
