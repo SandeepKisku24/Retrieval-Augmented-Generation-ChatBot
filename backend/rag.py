@@ -2,13 +2,14 @@ import os
 import pickle
 import requests
 from dotenv import load_dotenv
+
 from langchain_community.vectorstores import FAISS
 
 load_dotenv()
 HF_TOKEN = os.getenv("HF_API_KEY")
 
 def download_faiss_from_gdrive():
-    file_id = "1PhUi4HqRRRSEOI20F577_GCBll56ScbL"
+    file_id = "1D71dmUfIoG99BMVYlP9dEBgcQjl469lh"
     destination = "faiss_index.pkl"
 
     if not os.path.exists(destination):
@@ -24,10 +25,10 @@ def download_faiss_from_gdrive():
         else:
             print(f"Download failed. Status code: {response.status_code}")
 
-# Download the index if not present
+# Download FAISS index if not found
 download_faiss_from_gdrive()
 
-# Load FAISS index
+# Load FAISS index (must be saved with CPU-safe settings)
 with open("faiss_index.pkl", "rb") as f:
     vectorstore = pickle.load(f)
 
